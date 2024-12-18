@@ -1,0 +1,207 @@
+												
+											if else problems
+												
+												
+
+Quadrant of a Point - Take two float inputs representing the x and y coordinates of a point. If both are positive, print "First quadrant." Else if x is negative and y is positive, print "Second quadrant." Else if both are negative, print "Third quadrant." Else if x is positive and y is negative, print "Fourth quadrant." Else, print "Point is on the axis."
+import java.util.Scanner;
+public class QuadrantOfPoint {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter x coordinate: ");
+        float x = scanner.nextFloat();
+        System.out.print("Enter y coordinate: ");
+        float y = scanner.nextFloat();
+        if (x > 0 && y > 0) {
+            System.out.println("First quadrant.");
+        } else if (x < 0 && y > 0) {
+            System.out.println("Second quadrant.");
+        } else if (x < 0 && y < 0) {
+            System.out.println("Third quadrant.");
+        } else if (x > 0 && y < 0) {
+            System.out.println("Fourth quadrant.");
+        } else {
+            System.out.println("Point is on the axis.");
+        }
+        scanner.close();
+    }
+}
+
+Number Range Check - Take an integer as input. If the number is between 1 and 10 (inclusive), print "In range." Else, print "Out of range."
+
+import java.util.Scanner;
+public class NumberRangeCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+        if (num >= 1 && num <= 10) {
+            System.out.println("In range.");
+        } else {
+            System.out.println("Out of range.");
+        }
+        scanner.close();
+    }
+}
+
+ 
+Check Positive, Negative, or Zero - Take an integer as input. If it's positive, print "Positive number." If it's negative, print "Negative number." Else, print "The number is zero."
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+
+        if (number >0) {
+            System.out.println("Positive number.");
+        } else if (number % 3 == 0) {
+            System.out.println("divisible by 3");
+        } else if (number < 0) {
+            System.out.println("Negative number.");
+        } else {
+            System.out.println("The number is zero.");
+        }
+    }
+}
+
+Greater of Two Numbers - Take two integers as input. Print the greater number. If they are equal, print "Both numbers are equal."
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+
+        if (number % 3 == 0 && number % 5 == 0) {
+            System.out.println("divisible by 3 and 5");
+        } else if (number % 3 == 0) {
+            System.out.println("divisible by 3");
+        } else if (number % 5 == 0) {
+            System.out.println("divisible by 5");
+        } else {
+            System.out.println("not divisible by 3 or 5");
+        }
+    }
+}
+
+Odd or Even - Take an integer as input. If it's divisible by 2, print "Even number." Else, print "Odd number."
+ 
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+
+        if (number%2==0) {
+            System.out.println("Even number");
+        }
+		else
+			System.out.println("Odd number");
+    }
+}
+ 
+ 
+Leap Year Check - Take an integer year as input. If the year is divisible by 4 and not divisible by 100, or divisible by 400, print "Leap year." Else, print "Not a leap year."
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a year: ");
+        int year = sc.nextInt();
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println("Leap year.");
+        } else {
+            System.out.println("Not a leap year.");
+        }
+    }
+}
+
+
+Grade Assignment - Take a float score (0 to 100) as input. If the score is 90 or above, print "A." Else if it's 80 or above, print "B." Else if it's 70 or above, print "C." Else, print "F."
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the score (0 to 100): ");
+        float score = scanner.nextFloat();
+
+        assignGrade(score);
+    }
+
+    public static void assignGrade(float score) {
+        if (score >= 90) {
+            System.out.println("A");
+        } else if (score >= 80) {
+            System.out.println("B");
+        } else if (score >= 70) {
+            System.out.println("C");
+        } else {
+            System.out.println("F");
+        }
+    }
+}
+
+
+ 
+Character Type - Take a single character as input. If it’s a digit ('0' to '9'), print "Digit." Else if it’s an alphabet, print "Alphabet." Else, print "Special character."
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter character: ");
+		char ch = sc.next().charAt(0);
+		if( (ch>='A' && ch<='Z')||(ch>='a' && ch<='z'))
+			System.out.print("Alphabet");
+		else if(ch >= '0' && ch <= '9') 
+			System.out.println("Digit");
+		else
+			System.out.println("Special character.");
+	}
+}
+
+
+
+
+Simple Calculator - Take two floats and an operator (+, -, *, /) as input. Perform the operation and print the result. If the operator is invalid, print "Invalid operator."
+ 
+
+import java.util.Scanner;
+public class SimpleCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        float num1 = scanner.nextFloat();
+        System.out.print("Enter second number: ");
+        float num2 = scanner.nextFloat();
+        System.out.print("Enter operator (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+        if (operator == '+') {
+            float result = num1 + num2;
+            System.out.println("Result: " + result);
+        } else if (operator == '-') {
+            float result = num1 - num2;
+            System.out.println("Result: " + result);
+        } else if (operator == '*') {
+            float result = num1 * num2;
+            System.out.println("Result: " + result);
+        } else if (operator == '/') {
+            if (num2 != 0) {
+                float result = num1 / num2;
+                System.out.println("Result: " + result);
+            } else {
+                System.out.println("Cannot divide by zero.");
+            }
+        } else {
+            System.out.println("Invalid operator.");
+        }
+        scanner.close();
+    }
+}

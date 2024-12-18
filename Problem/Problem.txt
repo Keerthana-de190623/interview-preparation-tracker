@@ -1,0 +1,521 @@
+Final Prices With a Special Discount in a Shop
+
+https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/description/
+
+class Solution {
+    public int[] finalPrices(int[] prices) {
+        int n = prices.length;
+        int[] res = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            res[i] = prices[i];
+
+            for (int j = i + 1; j < n; j++) {
+                if (prices[j] <= prices[i]) {
+                    res[i] -= prices[j];
+                    break;
+                }
+            }
+        }
+        
+        return res;
+    }
+}
+
+Defuse the Bomb
+
+https://leetcode.com/problems/defuse-the-bomb/description/
+
+class Solution {
+    public int[] decrypt(int[] code, int k) {
+   int[] result = new int[code.length];
+
+        if (k == 0) {
+            return result;
+        }
+        for (int i = 0; i < result.length; i++) {
+            if (k > 0) {
+
+                for (int j = i + 1; j < i + k + 1; j++) {
+                    result[i] += code[j % code.length];
+                }
+            } else {
+
+                for (int j = i - Math.abs(k); j < i; j++) {
+                    result[i] += code[(j + code.length) % code.length];
+                }
+            }
+        }
+        return result;
+    }
+}
+
+
+ 1-bit and 2-bit Characters
+
+https://leetcode.com/problems/1-bit-and-2-bit-characters/description/
+
+class Solution 
+{
+    public boolean isOneBitCharacter(int[] bits) 
+    {
+        int i = 0;
+        int n = bits.length - 1;
+
+        while (i < n)
+        {
+            if (bits[i] == 1)
+                i += 2;
+            else
+                i += 1;
+        }
+
+        return i == n;
+    }
+}
+
+
+Binary Search
+
+https://leetcode.com/problems/binary-search/description/
+
+class Solution {
+    public int search(int[] nums, int target) {
+        int low = 0, high = nums.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return -1;
+    }
+}
+
+Check if the Sentence Is Pangram
+
+https://leetcode.com/problems/check-if-the-sentence-is-pangram/description/
+
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        if(sentence.length()<26) return false;
+        for(char ch='a';ch<='z';ch++){
+            if(sentence.indexOf(ch)<0){
+                return false;
+            }
+         }
+        return true;
+    }
+}
+
+
+Minimum Operations to Make the Array Increasing
+
+https://leetcode.com/problems/minimum-operations-to-make-the-array-increasing/description/
+
+class Solution {
+    public int minOperations(int[] arr) {
+        int n = arr.length;
+        
+        int ans = 0;
+
+        for(int i=1; i<n; i++){
+            if(arr[i]<=arr[i-1]){
+                ans = ans + arr[i-1]-arr[i]+1;
+                arr[i] = arr[i-1]+1;
+            }
+        }
+        return ans;
+    }
+}
+
+Truncate Sentence
+
+https://leetcode.com/problems/truncate-sentence/
+
+class Solution {
+    public String truncateSentence(String s, int k) {
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i)==' ') {
+               k--;
+               if(k==0) 
+                    return s.substring(0,i);
+            }
+        }
+
+        return s;
+    }
+}
+
+Determine Color of a Chessboard Square
+
+https://leetcode.com/problems/determine-color-of-a-chessboard-square/description/
+
+class Solution {
+    public boolean squareIsWhite(String coordinates) {
+        char letter = coordinates.charAt(0);
+        int digit = coordinates.charAt(1) - '0';
+        
+        
+        if(letter == 'a' || letter == 'c' || letter == 'e' || letter == 'g'){
+			// when digit is even
+            return digit % 2 == 0;
+        }else{
+		   //when digit is odd
+            return digit % 2 == 1;
+        }
+    }
+}
+
+Check if Binary String Has at Most One Segment of Ones
+
+https://leetcode.com/problems/check-if-binary-string-has-at-most-one-segment-of-ones/description/
+
+class Solution {
+    public boolean checkOnesSegment(String s) {
+        return !s.contains("01");
+    }
+}
+
+Find Center of Star Graph
+
+https://leetcode.com/problems/find-center-of-star-graph/description/
+
+class Solution {
+    public int findCenter(int[][] edges) {
+        if(edges[0][0] == edges[1][0] || edges[0][0] == edges[1][1]) {
+            return edges[0][0];
+        } else {
+            return edges[0][1];
+        }
+    }
+}
+
+Maximum Product of Three Numbers
+
+https://leetcode.com/problems/maximum-product-of-three-numbers/description/
+
+
+class Solution {
+    public int maximumProduct(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+        return Math.max(nums[n-1] * nums[n-2] * nums[n-3], nums[0] * nums[1] * nums[n-1]);
+    }
+}
+
+Add Digits
+
+https://leetcode.com/problems/add-digits/description/
+
+class Solution {
+    public int addDigits(int num) {
+        if (num == 0) return 0;
+        if(num %9 == 0){
+            return 9;
+        }else{
+            return num%9;
+        }
+    }
+}
+
+Set Mismatch
+
+https://leetcode.com/problems/set-mismatch/description/
+
+class Solution {
+    public int[] findErrorNums(int[] nums) {
+        int n = nums.length;
+        int[] result = new int[2];
+        for (int i = 0; i < n; i++) {
+            int index = Math.abs(nums[i]) - 1; 
+            if (nums[index] < 0) {
+                result[0] = Math.abs(nums[i]); 
+            } else {
+                nums[index] = -nums[index];  
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (nums[i] > 0) {
+                result[1] = i + 1;
+                break;
+            }
+        }
+        return result;
+    }
+}
+
+Distribute Candies
+
+https://leetcode.com/problems/distribute-candies/description/
+
+class Solution {
+    public int distributeCandies(int[] candyType) {
+
+        Arrays.sort(candyType);
+                int distinctTypes = 1;
+        for (int i = 1; i < candyType.length; i++) {
+            if (candyType[i] != candyType[i - 1]) {
+                distinctTypes++;
+            }
+        }
+
+        int n = candyType.length;
+        return Math.min(distinctTypes, n / 2);
+    }
+}
+
+Reshape the Matrix
+
+https://leetcode.com/problems/reshape-the-matrix/description/
+
+class Solution {
+    public int[][] matrixReshape(int[][] mat, int r, int c) {
+        int m = mat.length;     
+        int n = mat[0].length;   
+
+        if (m * n != r * c) {
+            return mat;
+        }
+        
+
+        int[][] reshapedMatrix = new int[r][c];
+        
+
+        int[] flattened = new int[m * n];
+        int index = 0;
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                flattened[index++] = mat[i][j];
+            }
+        }
+        index = 0;
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                reshapedMatrix[i][j] = flattened[index++];
+            }
+        }
+        
+        return reshapedMatrix;
+    }
+}
+
+Reverse String II
+
+https://leetcode.com/problems/reverse-string-ii/description/
+
+class Solution {
+    public String reverseStr(String s, int k) {
+
+        char[] chars = s.toCharArray();
+
+        for (int i = 0; i < chars.length; i += 2 * k) {
+
+            int left = i;
+            int right = Math.min(i + k - 1, chars.length - 1);  
+            while (left < right) {
+                char temp = chars[left];
+                chars[left] = chars[right];
+                chars[right] = temp;
+                left++;
+                right--;
+            }
+        }
+        
+        return new String(chars);
+    }
+}
+
+Detect Capital
+
+https://leetcode.com/problems/detect-capital/description/
+
+class Solution {
+    public boolean detectCapitalUse(String word) {
+        int upper=0;
+
+        int n=word.length();
+        for(int i=0;i<n;i++)
+        {
+            if(word.charAt(i)>='A' && word.charAt(i)<='Z')
+            {
+                upper++;
+            }
+        }
+        if(upper==0 || upper==n) return true;
+        else if(upper==1 && word.charAt(0)>='A' && word.charAt(0)<='Z') return true;
+        else return false;
+    }
+}
+
+Fibonacci Number
+
+https://leetcode.com/problems/fibonacci-number/
+
+class Solution {
+    public int fib(int n) {
+        if (n <= 1) return n;
+        int a = 0, b = 1;
+        for (int i = 2; i <= n; i++) {
+            int temp = b;
+            b = a + b;
+            a = temp;
+        }
+        return b;
+    }
+}
+
+Base 7
+
+https://leetcode.com/problems/base-7/description/
+
+class Solution {
+    public String convertToBase7(int num) {
+     return Integer.toString(num, 7);   
+    }
+}
+
+Teemo Attacking
+
+https://leetcode.com/problems/teemo-attacking/
+
+class Solution {
+    public int findPoisonedDuration(int[] timeSeries, int duration) {
+
+        if (timeSeries.length == 0) {
+            return 0;
+        }
+
+        int totalPoisonedTime = 0;
+        for (int i = 0; i < timeSeries.length - 1; i++) {
+
+            if (timeSeries[i + 1] < timeSeries[i] + duration) {
+                totalPoisonedTime += timeSeries[i + 1] - timeSeries[i];
+            } else {
+                totalPoisonedTime += duration;
+            }
+        }
+        totalPoisonedTime += duration;
+
+        return totalPoisonedTime;
+    }
+}
+
+Construct the Rectangle
+
+https://leetcode.com/problems/construct-the-rectangle/description/
+
+class Solution {
+    public int[] constructRectangle(int area) {
+
+        int i = (int) Math.sqrt(area);
+
+        for(; i>=1; i--){
+            if(area % i == 0){
+                return new int [] {area/i, i};
+            }
+        }
+
+        return new int []{area, 1};
+        
+    }
+}
+
+Max Consecutive Ones
+
+https://leetcode.com/problems/max-consecutive-ones/description/
+
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+       int count = 0; 
+       int max = 0;
+       for(int i = 0;i < nums.length; i++){
+           if(nums[i]==1){
+                count++;
+                if(i==nums.length-1 && max < count){
+                    max = count;
+                }
+            }else{
+                if(max < count){
+                    max=count;
+                }
+                count = 0;
+            }
+       }
+        return max;
+    }
+}
+
+Number Complement
+
+https://leetcode.com/problems/number-complement/description/
+
+class Solution {
+    public int findComplement(int num) {
+        int digi = 0;
+        int temp = num;
+        while(true){
+            if(temp == 1 || temp == 0) break;
+            temp = temp/2;
+            digi++;
+        }
+        if(temp==1) digi++;
+
+        int max =(int) (Math.pow(2,digi)-1);
+        return max-num;
+    }
+}
+
+
+Assign Cookies
+
+https://leetcode.com/problems/assign-cookies/description/
+
+class Solution {
+    public int findContentChildren(int[] g, int[] s) {
+        int count = 0;
+        Arrays.sort(g);
+        Arrays.sort(s);
+        int i = 0;
+        int j=0;
+        while (i < g.length && j < s.length){
+            if (g[i] <= s[j]){
+                count += 1;
+                i += 1;
+            }
+            j += 1;
+        }
+        return count;
+
+    }
+}
+
+132 Pattern
+
+https://leetcode.com/problems/132-pattern/description/
+
+class Solution 
+{
+    public boolean find132pattern(int[] nums) 
+    {
+        for(int i=0;i<nums.length-2;i++)
+        {
+            for(int j=i+1;j<nums.length-1;j++)
+            {
+                for(int k=j+1;k<nums.length;k++)
+                {
+                    if(nums[i]<nums[k] && nums[i]<nums[j] && nums[k]<nums[j])
+                    {
+                        return true;   
+                    }
+                }
+            }
+        }
+        return false;
+    }
+}

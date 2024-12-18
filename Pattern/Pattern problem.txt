@@ -1,0 +1,1042 @@
+	
+					PATTERN PROBLEMS
+				
+01.  *****
+     *****
+     *****
+     *****
+     *****
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+       for(int i=0;i<n;i++){
+           for(int j=0;j<n;j++){
+               System.out.print("*");
+           }
+            System.out.println();
+       }
+    }
+}
+
+02.  *
+     **
+     ***
+     ****
+     *****
+
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+	       for(int i=0;i<n;i++){
+           for(int j=0;j<i+1;j++){
+               System.out.print("*");
+           }
+            System.out.println();
+       }
+    }
+}
+
+03.  *****
+     ****
+     ***
+     **
+     *
+
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+	       for(int i=0;i<n;i++){
+           for(int j=0;j<n-i;j++){
+               System.out.print("*");
+           }
+            System.out.println();
+       }
+    }
+}
+
+04.  *
+     **
+     ***
+     ****
+     *****
+     ****
+     ***
+     **
+     *
+
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+	       for(int i=0;i<n;i++){
+           for(int j=0;j<i+1;j++){
+               System.out.print("*");
+           }
+		   
+            System.out.println();
+       }
+	      for(int i=1;i<n;i++){
+           for(int j=1;j<n-i;j++){
+               System.out.print("*");
+           }
+            System.out.println();
+       }
+    }
+}
+
+05.       *
+         **
+        ***
+       ****
+      *****
+	  
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+	       for(int i=0;i<=n;i++){
+           for(int j=1;j<=n-i;j++){
+               System.out.print(" ");
+           }
+		   for(int j=1;j<=i+1;j++){
+               System.out.print("*");
+           }
+            System.out.println();
+       }
+    }
+}
+
+06.   *****
+       ****
+        ***
+         **
+          *
+
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+	          for(int i=0;i<n;i++){
+           for(int j=0;j<i+1;j++){
+               System.out.print("*");
+           }
+            System.out.println();
+       }
+       }
+    }
+}
+
+07.      *
+        ***
+       *****
+      *******
+     *********
+	 
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+	       for(int i=1;i<=n;i++){
+           for(int j=i;j<=n;j++){
+               System.out.print(" ");
+           }
+		   for(int k=1;k<=2*i-1;k++){
+               System.out.print("*");
+           }
+            System.out.println();
+       }
+    }
+}
+
+08.  *********
+      *******
+       *****
+        ***
+         *
+
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+	       for(int i=n;i>=1;i--){
+           for(int j=n;j>i;j--){
+               System.out.print(" ");
+           }
+		   for(int k=1;k<=2*i-1;k++){
+               System.out.print("*");
+           }
+            System.out.println();
+       }
+    }
+}
+
+09.      *
+        * *
+       * * *
+      * * * *
+     * * * * *
+
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+	       for(int i=1;i<=n;i++){
+           for(int j=i;j<=n;j++){
+               System.out.print(" ");
+           }
+		   for(int k=1;k<=i;k++){
+               System.out.print(" *");
+           }
+            System.out.println();
+       }
+    }
+}
+
+10.  * * * * *
+      * * * *
+       * * *
+        * *
+         *
+		 
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+	       for(int i=n;i>=1;i--){
+           for(int j=n;j>i;j--){
+               System.out.print(" ");
+           }
+		   for(int k=1;k<=i;k++){
+               System.out.print("* ");
+           }
+            System.out.println();
+       }
+    }
+}	 
+
+
+11.  * * * * *
+      * * * *
+       * * *
+        * *
+         *
+         *
+        * *
+       * * *
+      * * * *
+     * * * * *
+
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+	    for(int i=n;i>=1;i--){
+           for(int j=n;j>i;j--){
+               System.out.print(" ");
+           }
+		   for(int k=1;k<=i;k++){
+               System.out.print("* ");
+           }
+            System.out.println();
+       }
+       	   for(int i=2;i<=n;i++){
+           for(int j=n;j>i;j--){
+               System.out.print(" ");
+           }
+		   for(int k=1;k<=i;k++){
+               System.out.print("* ");
+           }
+            System.out.println();
+       }
+    }
+}
+
+12.      *
+        * *
+       * * *
+      * * * *
+     * * * * *
+      * * * *
+       * * *
+        * *
+         *
+
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+	       for(int i=1;i<=n;i++){
+           for(int j=n;j>i;j--){
+               System.out.print(" ");
+           }  
+		   for(int k=1;k<=i;k++){
+               System.out.print(" * ");
+           }
+            System.out.println();
+       }
+	       for(int i=n-1;i>=1;i--){
+           for(int j=n;j>i;j--){
+               System.out.print(" ");
+           }
+		   for(int k=1;k<=i;k++){
+               System.out.print(" * ");
+           }
+            System.out.println();
+       }
+    }
+    
+}
+
+13.      *
+        * *
+       *   *
+      *     *
+     *********
+
+public class Pattern13 {
+    public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= rows - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= (2 * i - 1); j++) {
+
+                if (j == 1 || j == (2 * i - 1) || i == rows) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+14.  *********
+      *     *
+       *   *
+        * *
+         *
+public class Pattern14 {
+    public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            // Print spaces
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int j = 0; j < 2 * (n - i) - 1; j++) {
+                if (j == 0 || j == 2 * (n - i) - 2 || i == n - 1)
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+15.      *
+        * *
+       *   *
+      *     *
+     *       *
+      *     *
+       *   *
+        * *
+         *
+public class Pattern15 {
+    public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+        for (int i = 1; i <= n; i++) {
+            for (int j = n; j > i; j--) {
+                System.out.print(" ");
+            }
+            System.out.print("*");
+            for (int j = 1; j < 2 * (i - 1); j++) {
+                System.out.print(" ");
+            }
+            if (i > 1) System.out.print("*");
+            System.out.println();
+        }
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = n; j > i; j--) {
+                System.out.print(" ");
+            }
+            System.out.print("*");
+            for (int j = 1; j < 2 * (i - 1); j++) {
+                System.out.print(" ");
+            }
+            if (i > 1) System.out.print("*");
+            System.out.println();
+        }
+    }
+}
+
+16.   **********
+      ****  ****
+      ***    ***
+      **      **
+      *        *
+      *        *
+      **      **
+      ***    ***
+      ****  ****
+      **********
+
+public class DiamondStarPattern {
+    public static void main(String[] args) {
+        int n = 5; 
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < n - i; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < 2 * i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < n - i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int i = n - 2; i >= 0; i--) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < n - i; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < 2 * i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < n - i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+17.    *        *
+       **      **
+       ***    ***
+       ****  ****
+       **********
+       ****  ****
+       ***    ***
+       **      **
+       *        *
+public class Pattern17 {
+    public static void printPattern(int n)
+    {
+        int i, j;
+        int num = 1;
+        for (i = 1; i <= n; i++) {
+            for (j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            int spaces = 2 * (n - i);
+            for (j = 1; j <= spaces; j++) {
+                System.out.print(" ");
+            }
+            for (j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+
+        for (i = n; i >= 1; i--) {
+            for (j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            int spaces = 2 * (n - i);
+            for (j = 1; j <= spaces; j++) {
+                System.out.print(" ");
+            }
+            for (j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+
+    public static void main(String args[])
+    {
+        int n = 6;
+        printPattern(n);
+    }
+}
+
+18.    ****
+       *  *
+       *  *
+       *  *
+       ****
+	   
+public class Pattern18 {
+    public static void main(String[] args) {
+        int n = 4; 
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (i == 1 || i == n || j == 1 || j == n)
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+19.        ****
+          *  *
+         *  *
+        *  *
+       ****
+
+public class Pattern19 {
+    public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j < i; j++) System.out.print(" ");
+            for (int j = 1; j <= n; j++) {
+                if (i == 1 || i == n || j == 1 || j == n)
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+20.    *        *
+       **      **
+       * *    * *
+       *  *  *  *
+       *   **   *
+       *   **   *
+       *  *  *  *
+       * *    * *
+       **      **
+       *        *
+
+import java.util.Scanner;
+public class StarPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the size of the pattern (n): ");
+        int n = scanner.nextInt();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+
+            System.out.print("*");
+
+            for (int j = 0; j < (2 * (n - i - 1) - 1); j++) {
+                System.out.print(" ");
+            }
+            if (i != n - 1) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int i = n - 2; i >= 0; i--) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.print("*");
+            for (int j = 0; j < (2 * (n - i - 1) - 1); j++) {
+                System.out.print(" ");
+            }
+            if (i != n - 1) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        scanner.close();
+    }
+}
+
+21.    *        *
+       **      **
+       ***    ***
+       ****  ****
+       **********
+       ****  ****
+       ***    ***
+       **      **
+       *        *
+	   
+public class Pattern17 {
+    public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number:");
+       int n = sc.nextInt();
+        // Top half
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) 
+				System.out.print("*");
+            for (int j = 1; j <= 2 * (n - i); j++) 
+				System.out.print(" ");
+            for (int j = 1; j <= i; j++) 
+				System.out.print("*");
+            System.out.println();
+        }
+        // Bottom half
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) 
+				System.out.print("*");
+            for (int j = 1; j <= 2 * (n - i); j++) 
+				System.out.print(" ");
+            for (int j = 1; j <= i; j++) 
+				System.out.print("*");
+            System.out.println();
+        }
+    }
+}
+
+22.        *      *
+         *   *  *   *
+       *      *      *
+
+public class Pattern22 {
+    public static void main(String[] args) {
+        int n = 3;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i - 1; j++) System.out.print(" ");
+            for (int j = 0; j <= i; j++) System.out.print("*   ");
+            System.out.println();
+        }
+    }
+}
+
+## Number Patterns
+
+01. 1
+    1 2
+    1 2 3
+    1 2 3 4
+    1 2 3 4 5
+
+public class NumberPattern01 {
+    public static void main(String[] args) {
+        int n = 5;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+02. 1 1 1 1 1 1
+    2 2 2 2 2
+    3 3 3 3
+    4 4 4
+    5 5
+    6
+
+public class NumberPattern02 {
+    public static void main(String[] args) {
+        int n = 6;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i + 1; j++) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+03.      1
+        212
+       32123
+      4321234
+       32123
+        212
+         1
+public class NumberPattern03 {
+    public static void main(String[] args) {
+        int n = 4; 
+        // Top half
+        for (int i = 1; i <= n; i++) {
+            for (int j = n; j > i; j--) 
+		System.out.print(" ");
+            for (int j = i; j >= 1; j--) 
+		System.out.print(j);
+            for (int j = 2; j <= i; j++) 
+		System.out.print(j);
+            System.out.println();
+        }
+        // Bottom half
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = n; j > i; j--) 
+		System.out.print(" ");
+            for (int j = i; j >= 1; j--) 
+		System.out.print(j);
+            for (int j = 2; j <= i; j++) 
+		System.out.print(j);
+            System.out.println();
+        }
+    }
+}
+
+04.    1
+       2  3
+       4  5  6
+       7  8  9  10
+       11 12 13 14 15
+	   
+public class NumberPattern04 {
+    public static void main(String[] args) {
+        int n = 5, num = 1;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(num + " ");
+                num++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+05.    1
+       0 1
+       1 0 1
+       0 1 0 1
+       1 0 1 0 1
+
+public class NumberPattern05 {
+    public static void main(String[] args) {
+        int n = 5;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                if ((i + j) % 2 == 0)
+                    System.out.print("1 ");
+                else
+                    System.out.print("0 ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+06.         1
+          2 1 2
+        3 2 1 2 3
+      4 3 2 1 2 3 4
+    5 4 3 2 1 2 3 4 5
+
+public class NumberPattern06 {
+    public static void main(String[] args) {
+        int n = 5;
+        for (int i = 1; i <= n; i++) {
+            for (int j = n; j > i; j--) 
+		System.out.print("  ");
+            for (int j = i; j >= 1; j--) 
+		System.out.print(j + " ");
+            for (int j = 2; j <= i; j++) 
+		System.out.print(j + " ");
+            System.out.println();
+        }
+    }
+}
+
+07.      4 4 4 4 4 4 4  
+         4 3 3 3 3 3 4   
+         4 3 2 2 2 3 4   
+         4 3 2 1 2 3 4   
+         4 3 2 2 2 3 4   
+         4 3 3 3 3 3 4   
+         4 4 4 4 4 4 4   
+
+public class NumberPattern07 {
+    public static void main(String[] args) {
+        int n = 4;
+        for (int i = 1; i <= 2 * n - 1; i++) {
+            for (int j = 1; j <= 2 * n - 1; j++) {
+                int minDist = Math.min(Math.min(i, j), Math.min(2 * n - i, 2 * n - j));
+                System.out.print(n - minDist + 1 + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+08.   1 2 3 4  17 18 19 20
+        5 6 7  14 15 16
+          8 9  12 13
+            10 11
+
+public class NumberPattern1 {
+    public static void main(String[] args) {
+        int n = 4; 
+        int leftStart = 1;
+        int rightStart = n * n + 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("  ");
+            }
+            for (int j = 0; j < n - i; j++) {
+                System.out.print(leftStart++ + " ");
+            }
+            for (int j = 0; j < n - i; j++) {
+                System.out.print(rightStart++ + " ");
+            }
+
+            rightStart -= (n - i) * 2;
+
+            System.out.println();
+        }
+    }
+}
+
+09.    1      1
+       12    21
+       123  321
+       12344321
+
+public class NumberPattern2 {
+    public static void main(String[] args) {
+        int n = 4; 
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            for (int j = 0; j < (n - i) * 2; j++) {
+                System.out.print(" ");
+            }
+            for (int j = i; j >= 1; j--) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+10.           1
+            1   1
+          1   2   1
+        1   3   3   1
+      1   4   6   4   1
+
+public class Pattern10{
+    public static void printPascal(int n)
+    {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 0; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            int x = 1;
+            for (int k = 1; k <= i; k++) {
+                System.out.print(x + " ");
+                x = x * (i - k) / k;
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args)
+    {
+        int n = 4;
+        printPascal(n);
+    }
+}
+
+11.    1
+       1 1
+       2 1
+       1 2 1 1
+       1 1 1 2 2 1
+
+public class CountAndSay {
+    public static void main(String[] args) {
+        int n = 5; 
+        System.out.println(countAndSay(n));
+    }
+    public static String countAndSay(int n) {
+        String result = "1";
+        for (int i = 2; i <= n; i++) {
+            StringBuilder nextTerm = new StringBuilder();
+            char currentChar = result.charAt(0);
+            int count = 1;
+            for (int j = 1; j < result.length(); j++) {
+                if (result.charAt(j) == currentChar) {
+                    count++;
+                } else {
+                    nextTerm.append(count).append(currentChar);
+                    currentChar = result.charAt(j);
+                    count = 1;
+                }
+            }
+            nextTerm.append(count).append(currentChar);
+            result = nextTerm.toString();
+        }
+        return result;
+    }
+}
+
+or
+
+class Solution {
+    public String countAndSay(int n) {
+        if (n == 1)
+            return "1";
+        String str = "1";
+        for (int i = 2; i <= n; i++) {
+            StringBuilder nextString = new StringBuilder();
+            int count = 1;
+            char ch = str.charAt(0);
+            
+            for (int j = 1; j < str.length(); j++) {
+                if (ch == str.charAt(j)) {
+                    count++;
+                } else {
+                    nextString.append(count).append(ch);
+                    ch = str.charAt(j);
+                    count = 1;
+                }
+            }
+            nextString.append(count).append(ch);
+            str = nextString.toString();
+        }
+        return str;
+    }
+}
+
+## Character Patterns
+
+
+01.    E
+       D E
+       C D E
+       B C D E
+       A B C D E
+
+public class AlphabetPattern01 {
+    public static void main(String[] args) {
+        int n = 5;
+        for (int i = 0; i < n; i++) {
+            char ch = (char) ('E' - i);
+            for (int j = 0; j <= i; j++) {
+                System.out.print(ch + " ");
+                ch++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+02.    E D C B A
+       D C B A
+       C B A
+       B A
+       A
+
+public class AlphabetPattern02 {
+    public static void main(String[] args) {
+        int n = 5;
+        for (int i = 0; i < n; i++) {
+            char ch = (char) ('E' - i);
+            for (int j = 0; j < n - i; j++) {
+                System.out.print(ch-- + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+03.    a
+       B c
+       D e F
+       g H i J
+       k L m N o
+
+public class AlphabetPattern03 {
+    public static void main(String[] args) {
+        int n = 5;
+        char ch = 'a';
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                if ((i + j) % 2 == 0) {
+                    System.out.print(Character.toUpperCase(ch) + " ");
+                } else {
+                    System.out.print(Character.toLowerCase(ch) + " ");
+                }
+                ch++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+04.   H      O
+        E   L
+          L
+        E   L
+      H      O
+
+public class AlphabetPattern04 {
+    public static void main(String[] args) {
+        int n = 5;
+        char[] letters = {'H', 'E', 'L', 'L', 'O'};
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (j == i || j == n - i - 1) {
+                    System.out.print(letters[j] + " ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}

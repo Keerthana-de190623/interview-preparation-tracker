@@ -1,0 +1,350 @@
+							
+							Basic problems
+
+
+1.Addition Of Two Numbers
+
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the two numbers:");
+	int a = sc.nextInt();
+	int b = sc.nextInt();
+	int c = a+b;
+	System.out.println(c);
+	sc.close();
+	}
+
+}
+
+
+2.Area Of Circle
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the radius:");
+	double radius = sc.nextDouble();
+	double area = Math.PI*radius*radius;
+	System.out.println(area);
+	sc.close();
+	}
+}
+
+ 
+3.Area Of Triangle
+
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the base and height :");
+	double base = sc.nextDouble();
+	double height = sc.nextDouble();
+	double area = 1/2*base*height;
+	System.out.println(area);
+	sc.close();
+	}
+}
+ 
+ 
+ 
+4.Area Of Rectangle Program
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the base and height :");
+	double length = sc.nextDouble();
+	double weight = sc.nextDouble();
+	double area = length*weight;
+	System.out.println(area);
+	sc.close();
+	}
+}
+ 
+ 
+
+5.Area Of Isosceles Triangle
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the base and height :");
+	double base = sc.nextDouble();
+	double height = sc.nextDouble();
+	double area = 1/2*base*height;
+	System.out.println(area);
+	sc.close();
+	}
+}
+ 
+
+ 
+6.Area Of Parallelogram
+
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the base and height :");
+	double base = sc.nextDouble();
+	double height = sc.nextDouble();
+	double area =base*height;
+	System.out.println(area);
+	sc.close();
+	}
+}
+ 
+ 
+
+7.Area Of Rhombus
+ 
+
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the diagonal1 and diagonal2 :");
+	double diagonal1 = sc.nextDouble();
+	double diagonal2 = sc.nextDouble();
+	double area =1/2*diagonal1*diagonal2;
+	System.out.println(area);
+	sc.close();
+	}
+}
+ 
+ 
+ 
+8.Area Of Equilateral Triangle
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the sides:");
+	double side = sc.nextDouble();
+	double area = (Math.sqrt(3) / 4)  side*side;
+	System.out.println(area);
+	sc.close();
+	}
+}
+ 
+ 
+9.Perimeter Of Circle
+
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the radius:");
+	double radius = sc.nextDouble();
+	double area = 2*Math.PI*radius;
+	System.out.println(area);
+	sc.close();
+	}
+}
+
+
+ 
+ 
+10.Perimeter Of Equilateral Triangle
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the sides:");
+	double side = sc.nextDouble();
+	double area = 3*side;
+	System.out.println(area);
+	sc.close();
+	}
+}
+ 
+ 
+
+11.Perimeter Of Parallelogram
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the base and sides:");
+	double base = sc.nextDouble();
+	double side = sc.nextDouble();
+	double area = 2*(base+side);
+	System.out.println(area);
+	sc.close();
+	}
+}
+ 
+ 
+12.Perimeter Of Rectangle
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the length and weight:");
+	double length = sc.nextDouble();
+	double weight = sc.nextDouble();
+	double area = 2*(length+weight);
+	System.out.println(area);
+	sc.close();
+	}
+}
+ 
+ 
+13.Perimeter Of Square
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the sides:");
+	double side = sc.nextDouble();
+	double area = 4*side;
+	System.out.println(area);
+	sc.close();
+	}
+}
+ 
+
+
+14.Perimeter Of Rhombus
+ 
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the sides:");
+	double side = sc.nextDouble();
+	double area = 3*side;
+	System.out.println(area);
+	sc.close();
+	}
+}
+ 
+ 
+
+ 
+15.Volume Of Cone
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the radius and height:");
+	double radius = sc.nextDouble();
+	double height = sc.nextDouble();
+	double area = 1/3*Math.PI*radius*radius*height;
+	System.out.println(area);
+	sc.close();
+	}
+} 
+ 
+ 
+16.Volume Of Prism
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the basearea and height:");
+	double basearea = sc.nextDouble();
+	double height = sc.nextDouble();
+	double area = basearea*height;
+	System.out.println(area);
+	sc.close();
+	}
+} 
+ 
+ 
+ 
+17.Volume Of Cylinder
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the radius and height:");
+	double radius = sc.nextDouble();
+	double height = sc.nextDouble();
+	double area = Math.PI*radius*radius*height;
+	System.out.println(area);
+	sc.close();
+	}
+} 
+ 
+
+ 
+18.Volume Of Sphere
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the radius:");
+	double radius = sc.nextDouble();
+	double area = 4/3*Math.PI*radius*radius*radius;
+	System.out.println(area);
+	sc.close();
+	}
+} 
+ 
+ 
+ 
+19.Volume Of Pyramid
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the basearea and height:");
+	double basearea = sc.nextDouble();
+	double height = sc.nextDouble();
+	double area = 1/3*basearea*height;
+	System.out.println(area);
+	sc.close();
+	}
+} 
+  
+ 
+
+20.Curved Surface Area Of Cylinder
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the radius and height:");
+	double radius = sc.nextDouble();
+	double h = sc.nextDouble();
+	double area = 2*Math.PI*radius*height;
+	System.out.println(area);
+	sc.close();
+	}
+} 
+ 
+
+ 
+ 
+21.Total Surface Area Of Cube
+ 
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the side:");
+	double side = sc.nextDouble();
+	double area = 6*side*side;
+	System.out.println(area);
+	sc.close();
+	}
+} 

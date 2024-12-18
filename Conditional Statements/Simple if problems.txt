@@ -1,0 +1,270 @@
+Simple if problems
+
+
+Write a program that takes an integer input from the user and checks if the number is positive. If it is positive, print "The number is positive."
+ 
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+
+        if (number>0) {
+            System.out.println("positive number");
+        }
+    }
+}
+ 
+ 
+Even or Odd (using only one if) - Take an integer input from the user. If the number is even, print "The number is even." (No [ ]te: Don't print anything if it's odd.)
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+
+        if (number%2==0) {
+            System.out.println("Even number");
+        }
+    }
+}
+ 
+ 
+ 
+Ask the user to input a number. If the number is divisible by 5, print "The number is divisible by 5."
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+
+        if (number%5==0) {
+            System.out.println("The number is divisible by 5.");
+        }
+    }
+}
+ 
+
+ 
+Check for uppercase - Take a single character as input. If the character is an uppercase letter, print "The character is uppercase."
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter character: ");
+		char ch = sc.next().charAt(0);
+		if( ch >= 'A' && ch<='Z'){
+			System.out.println("The character is uppercase.");
+		}
+	}
+}
+ 
+
+ 
+Eligible to vote - Write a program that asks the user for their age. If their age is 18 or older, print "You are eligible to vote."
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an age: ");
+        int age = scanner.nextInt();
+        if (age>18) {
+            System.out.println("You are eligible to vote.");
+        }
+    }
+}
+ 
+ 
+
+ 
+Temperature Check - Ask the user to input the current temperature. If the temperature is greater than 30 degrees, print "It's hot outside."
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the temperature: ");
+        int Temperature = scanner.nextInt();
+        if (Temperature>30) {
+            System.out.println("It's hot outside.");
+        }
+    }
+}
+
+
+Check for Vowel - Take a single character input from the user. If the character is a vowel (a, e, i, o, u), print "The character is a vowel."
+ 
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a single character: ");
+        char ch = scanner.next().charAt(0);
+
+        checkVowel(ch);
+    }
+
+    public static void checkVowel(char ch) {
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+            System.out.println("The character is a vowel.");
+        } 
+    }
+}
+
+(OR)
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter character: ");
+		char ch = sc.next().charAt(0);
+        if ((ch == 'a')||(ch == 'e') ||(ch == 'i')||(ch == 'o')||(ch == 'u')||(ch == 'A')||(ch == 'E') ||(ch == 'I')||(ch == 'O')||(ch == 'U')) 
+        {
+            System.out.println("The character is a vowel.");
+        }
+		
+    }
+}
+  
+ 
+Minimum Balance Warning - Write a program to check if a bank account balance is below Rs.100. If it is, print "Warning: Low balance."
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+
+        if (number<100) {
+            System.out.println("Warning: Low balance.");
+        }
+    }
+}
+ 
+ 
+
+Discount Eligibility - Ask the user for the total amount of their purchase. If the amount is greater than $500, print "You are eligible for a discount."
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+
+        if (number>500) {
+            System.out.println("You are eligible for a discount.");
+        }
+    }
+}
+ 
+Character is Digit - Take a single character as input. If the character is a digit ('0' to '9'), print "This is a digit."
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter character: ");
+		char number = sc.next().charAt(0);
+        if (number>='0' && number<='9') {
+            System.out.println("This is a digit.");
+        }
+    }
+}
+
+
+Odd or Even - Take an integer as input. If it's divisible by 2, print "Even number." Else, print "Odd number."
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+
+        if (number%2==0) {
+            System.out.println("Even number");
+        }
+		else
+			System.out.println("Odd number");
+    }
+}
+ 
+ 
+ 
+Greater of Two Numbers - Take two integers as input. Print the greater number. If they are equal, print "Both numbers are equal."
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int a = scanner.nextInt();
+		int b = scanner.nextInt();
+        if (a>b) {
+            System.out.println(" a"+a);
+        }
+		else if (b>a)
+			System.out.println(" b"+b);
+		else if (b == a)	
+			System.out.println(" Both numbers are equal. ");
+    }
+}
+ 
+
+Grade Assignment - Take a float score (0 to 100) as input. If the score is 90 or above, print "A." Else if it's 80 or above, print "B." Else if it's 70 or above, print "C." Else, print "F."
+ 
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the score (0 to 100): ");
+        float score = scanner.nextFloat();
+
+        assignGrade(score);
+    }
+
+    public static void assignGrade(float score) {
+        if (score >= 90) {
+            System.out.println("A");
+        } else if (score >= 80) {
+            System.out.println("B");
+        } else if (score >= 70) {
+            System.out.println("C");
+        } else {
+            System.out.println("F");
+        }
+    }
+}
+
+ 
+Character Type - Take a single character as input. If it’s a digit ('0' to '9'), print "Digit." Else if it’s an alphabet, print "Alphabet." Else, print "Special character."
+ 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter character: ");
+		char ch = sc.next().charAt(0);
+		if( (ch>='A' && ch<='Z')||(ch>='a' && ch<='z'))
+			System.out.print("Alphabet");
+		else if(ch >= '0' && ch <= '9') 
+			System.out.println("Digit");
+		else
+			System.out.println("Special character.");
+	}
+}
+ 

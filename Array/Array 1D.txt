@@ -1,0 +1,431 @@
+Array Problems
+
+1D Array problems
+
+
+Product of Array Except Self
+
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+        int[] result = new int[n];
+        result[0] = 1; 
+        for (int i = 1; i < n; i++) {
+            result[i] = result[i - 1] * nums[i - 1];
+        }
+            int rightProduct = 1; 
+        for (int i = n - 2; i >= 0; i--) {
+            rightProduct *= nums[i + 1];
+            result[i] *= rightProduct;
+        }
+        
+        return result;
+    }
+}
+
+Plus One
+
+class Solution {
+    public int[] plusOne(int[] digits) {
+        for (int i = digits.length - 1; i >= 0; i--) {
+	if (digits[i] < 9) {
+		digits[i]++;
+		return digits;
+	}
+	digits[i] = 0;
+}
+
+digits = new int[digits.length + 1];
+digits[0] = 1;
+return digits;
+    }
+}
+
+Running Sum of 1d Array
+
+class Solution {
+    public int[] runningSum(int[] nums) {
+
+        for(int i=1;i<nums.length;i++){
+            nums[i]=nums[i-1]+nums[i];
+
+        }
+        return nums;
+    }
+}
+
+
+Add to Array-Form of Integer
+
+import java.util.LinkedList;
+import java.util.List;
+
+class Solution {
+    public List<Integer> addToArrayForm(int[] num, int k) {
+        List<Integer> arr = new LinkedList<>();
+
+        for (int i = num.length - 1; i >= 0 || k > 0; i--) {
+            if (i >= 0) {
+                k += num[i]; 
+            }
+            arr.add(0, k % 10);
+            k /= 10;
+        }
+        
+        return arr;
+    }
+}
+
+
+
+Find First and Last Position of Element in Sorted Array
+
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        int first = -1, last = -1;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == target) {
+                if (first == -1) {
+                    first = i;
+                }
+                last = i;
+            }
+        }
+        return new int[]{first, last};
+    }
+}
+
+Minimum Cost to Move Chips to The Same Position
+
+class Solution {
+    public int minCostToMoveChips(int[] position) {
+        int even= 0;
+        int odd = 0;
+
+        for (int pos : position) {
+            if (pos % 2 == 0) {
+                even++;
+            } else {
+                odd++;
+            }
+        }
+        return Math.min(odd, even);
+    }
+}
+
+How Many Numbers Are Smaller Than the Current Number
+
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+     int[] output = new int[nums.length];
+    int[] count = new int[101];
+    for (int num : nums) {
+        count[num]++;
+    }
+    for (int i = 1; i <= 100; i++) {
+        count[i] += count[i-1];
+    }
+    for (int i = 0; i < nums.length; i++) {
+        output[i] = nums[i] == 0 ? 0 : count[nums[i]-1];
+    }
+    return output;     
+    }
+}
+
+Create Target Array in the Given Order
+
+class Solution {
+    public int[] createTargetArray(int[] nums, int[] index) {
+        int[] arr = new int[nums.length]; 
+        for (int i = 0; i < nums.length; i++) {
+            int temp = index[i];
+            for (int j = i; j > temp; j--) {
+                arr[j] = arr[j - 1];
+            }
+            arr[temp] = nums[i];
+        }
+        return arr;
+    }
+}
+
+Find the Highest Altitude
+
+class Solution {
+    public int largestAltitude(int[] gain) {
+        int maxAltitude = 0;
+        int currentAltitude = 0;
+        for (int i = 0; i < gain.length; i++) {
+            currentAltitude += gain[i];
+            maxAltitude = Math.max(maxAltitude, currentAltitude);
+        }
+        return maxAltitude;
+    }
+}
+
+
+Count Items Matching a Rule
+
+class Solution {
+    public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+        int i = 0;
+        int count = 0;
+        if (ruleKey.equals("type")) {
+            i = 1;
+            for (int j = 0; j < items.size(); j++) {
+                if (items.get(j).get(i-1).equals(ruleValue))
+                    count++;
+            }
+        }
+        if (ruleKey.equals("color")) {
+            i = 2;
+            for (int j = 0; j < items.size(); j++) {
+                if (items.get(j).get(i-1).equals(ruleValue))
+                    count++;
+            }
+        }
+        if (ruleKey.equals("name")) {
+            i = 3;
+            for (int j = 0; j < items.size(); j++) {
+                if (items.get(j).get(i-1).equals(ruleValue))
+                    count++;
+            }
+        }
+
+    return count;
+    }
+}
+
+
+Find N Unique Integers Sum up to Zero
+
+class Solution {
+    public int[] sumZero(int n) {
+        int[] result = new int[n];
+        for (int i = 0; i < n / 2; i++) {
+            result[i] = i + 1;      
+            result[n - 1 - i] = -(i + 1); 
+        }
+        if (n % 2 != 0) {
+            result[n / 2] = 0;
+        }
+        return result;
+    }
+}
+
+
+Remove Duplicates from Sorted Array
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) return 0;
+        int i = 1;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[j] != nums[i - 1]) {
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+        return i;        
+    }
+}
+
+
+Build Array from Permutation
+
+class Solution {
+    public int[] buildArray(int[] nums) {
+        int n = nums.length;
+        int[] result= new int[n];
+        for (int i=0;i<n;i++){
+            result[i]=nums[nums[i]];
+        }
+        return result;
+    }
+}
+
+Concatenation of Array
+
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int len = nums.length;
+        int ans[] =new int [2*len];
+        for(int i=0;i<len; i++){
+            ans[i]=nums[i];
+            ans[i+len]=nums[i];
+        }
+        return ans;
+    }
+}
+
+
+Two Sum
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int n=nums.length;
+        for(int i=0;i<n-1;i++){
+            for(int j=i+1;j<n;j++){
+                if(nums[i]+ nums[j]== target){
+                    return new int[]{i,j};
+                }
+            }
+        }
+        return new int[]{};
+    }
+}
+
+
+Rotate Array
+
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int n = nums.length;
+        k = k % n;
+        reverse(nums, 0, n - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, n - 1);
+    }
+    private void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+    } 
+}
+
+
+Find Numbers with Even Number of Digits
+
+class Solution {
+    public int findNumbers(int[] nums) { 
+        int count=0;
+        for(int i =0 ; i< nums.length; i++){
+            
+            if((nums[i]>9 && nums[i]<100) || (nums[i]>999 && nums[i]<10000) || nums[i]==100000){
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+Maximum Population Year
+
+class Solution {
+    public int maximumPopulation(int[][] logs) {
+        int[] arr = new int[101];
+        for(int i=0;i<logs.length;i++){
+            for(int j =logs[i][0];j<logs[i][1];j++){
+                arr[j-1950]++;
+            }
+        }
+        int maxPopulationYear = 0;
+        int maxPopulation = 0;
+        for(int i = 0;i<101;i++){
+            if(maxPopulation < arr[i]){
+                maxPopulation = arr[i];
+                maxPopulationYear = i + 1950;
+            }
+        }
+        return maxPopulationYear;
+    }
+}
+
+numIdenticalPairs
+
+class Solution {
+    public int numIdenticalPairs(int[] nums) {
+        int count = 0; .
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    count++; 
+                }
+            }
+        }
+        return count;
+    }
+}
+
+
+Sort Colors
+
+class Solution {
+    public void sortColors(int[] nums) {
+        int low = 0, mid = 0, high = nums.length - 1;
+        while (mid <= high) {
+            if (nums[mid] == 0) {
+                swap(nums, low, mid);
+                low++;
+                mid++;
+            } else if (nums[mid] == 1) {
+                mid++;
+            } else {
+                swap(nums, mid, high);
+                high--;
+            }
+        }
+    }
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
+
+
+
+sumZero
+
+
+class Solution {
+    public int[] sumZero(int n) {
+        int[] result = new int[n];
+        
+        for (int i = 0; i < n / 2; i++) {
+            result[i] = i + 1;      
+            result[n - 1 - i] = -(i + 1); 
+        }
+     
+        if (n % 2 != 0) {
+            result[n / 2] = 0;
+        }
+        
+        return result;
+    }
+}
+
+smallerNumbersThanCurrent
+
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+     int[] output = new int[nums.length];
+    int[] count = new int[101];
+    for (int num : nums) {
+        count[num]++;
+    }
+    for (int i = 1; i <= 100; i++) {
+        count[i] += count[i-1];
+    }
+    for (int i = 0; i < nums.length; i++) {
+        output[i] = nums[i] == 0 ? 0 : count[nums[i]-1];
+    }
+    return output;     
+    }
+}
+
+Shuffle the Array
+
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int[] result = new int[2 * n];
+        for (int i = 0; i < n; i++) {
+            result[2 * i] = nums[i];
+            result[2 * i + 1] = nums[n + i];
+        }
+        return result;
+    }
+}

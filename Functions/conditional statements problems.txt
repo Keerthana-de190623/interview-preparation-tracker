@@ -1,0 +1,182 @@
+Conditional Statements Problems
+
+Solve problems with functions
+ 
+Calculator program - Write a program to perform +, -, *, / for the inputs 1, 2, 3 and 4 respectively. Exit the program only if the user input is 'e'.
+ 
+import java.util.Scanner;
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        float num1, num2, result;
+        char operation;
+        while (true) {
+            System.out.println("Enter an operation (1 = +, 2 = -, 3 = *, 4 = /), or 'e' to exit:");
+            operation = scanner.next().charAt(0);
+
+            if (operation == 'e' || operation == 'E') {
+                System.out.println("Exiting program...");
+                break;
+            }
+            if (operation >= '1' && operation <= '4') {
+                System.out.print("Enter first number: ");
+                num1 = scanner.nextFloat();
+                System.out.print("Enter second number: ");
+                num2 = scanner.nextFloat();
+                if (operation == '1') {
+                    result = num1 + num2;
+                    System.out.println("Result: " + result);
+                } else if (operation == '2') {
+                    result = num1 - num2;
+                    System.out.println("Result: " + result);
+                } else if (operation == '3') {
+                    result = num1 * num2;
+                    System.out.println("Result: " + result);
+                } else if (operation == '4') {
+                    if (num2 != 0) {
+                        result = num1 / num2;
+                        System.out.println("Result: " + result);
+                    } else {
+                        System.out.println("Error: Division by zero is not allowed.");
+                    }
+                }
+            } else {
+                System.out.println("Invalid input. Please enter a valid operation (1-4) or 'e' to exit.");
+            }
+        }
+
+        scanner.close();
+    }
+}
+ 
+ 
+ 
+Find the Largest of Three Numbers - Write a function that takes three integers as input and returns the largest of the three.
+
+
+import java.util.Scanner;
+class Main{
+public static void main (String[] args){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the numbers:");
+	int num1 = sc.nextInt();
+	int num2 = sc.nextInt();
+	int num3 = sc.nextInt();
+	int largest = largestnumber(num1,num2,num3);
+	System.out.println(" "+largest);
+	}
+	
+	public static int largestnumber(int a,int b,int c)
+	{
+	if(a>=b && a>=c)
+		return a;
+	else if (b>=a && b>=c)
+		return b;
+	else
+		return c;
+	}
+}
+ 
+
+
+Check for Leap Year - Write a function that checks whether a given year is a leap year. A leap year is divisible by 4, but not divisible by 100 unless also divisible by 400. (With return type, with argument)
+ 
+ 
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter the year:");
+int year = sc.nextInt();
+
+boolean isleap = checkleap(year);
+if(isleap)
+   System.out.println("Leap Year");
+else
+    System.out.println("Not a Leap Year");
+}
+public static boolean checkleap(int year){
+    if((year%4 ==0 && year%100 ==0) || year%400 ==0)
+    	return true;
+    else
+        return false;
+}
+}
+
+ 
+Generate Fibonacci Sequence - Write a function that takes an integer n and returns a list of the first n Fibonacci numbers. (Without return type, with argument)
+  
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of Fibonacci numbers to generate: ");
+        int n = scanner.nextInt();
+
+        generateFibonacci(n);
+    }
+
+    public static void generateFibonacci(int n) {
+        int first = 0, second = 1;
+        System.out.print("Fibonacci Sequence: ");
+        
+        for (int i = 0; i < n; i++) {
+            System.out.print(first + " ");
+            int next = first + second;
+            first = second;
+            second = next;
+        }
+        System.out.println();
+    }
+}
+
+Check if a Number is Palindrome - Write a function that takes an integer as input and checks if it is a palindrome (i.e., it reads the same forward and backward). (Without return type, without argument)
+ 
+
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+ checkPalindrome();
+}
+public static void checkPalindrome(){
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter the number:");
+int a = sc.nextInt();
+int originalnum = a;
+int reversenum = 0;
+while(a!=0){
+	int digit = a%10;
+	reversenum = reversenum *10 + digit;
+	a /=10;
+}
+if(originalnum == reversenum)
+	System.out.println("Palindrome");
+else
+	System.out.println("Not a Palindrome");
+}
+}
+
+
+Find the GCD of Two Numbers - Write a function that takes two integers and returns their Greatest Common Divisor (GCD) using the Euclidean algorithm. (Without return type, with argument)
+
+import java.util.Scanner;
+
+public class GCD {
+    public static void findGCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b; 
+            a = temp;
+        }
+        System.out.println("GCD is: " + a);
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+        findGCD(num1, num2);
+        scanner.close();
+    }
+}

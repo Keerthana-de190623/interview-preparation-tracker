@@ -1,0 +1,272 @@
+
+Richest Customer Wealth
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+
+        int maxCandies = 0;
+        for (int candy : candies) {
+            maxCandies = Math.max(maxCandies, candy);
+        }
+
+        List<Boolean> result = new ArrayList<>();
+        for (int candy : candies) {
+            result.add(candy + extraCandies >= maxCandies);
+        }
+
+        return result;
+    }
+}
+
+Kids With the Greatest Number of Candies
+ 
+ class Solution {
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        int max = 0;
+        for (int candy : candies) {
+            max = Math.max(max, candy);
+        }
+        List<Boolean> result = new ArrayList<>();
+        for (int candy : candies) {
+            result.add(candy + extraCandies >= max);
+        }
+        return result;
+    }
+}
+
+Flipping an Image
+
+class Solution {
+    public int[][] flipAndInvertImage(int[][] image) {
+        int n = image.length;
+        for (int[] row : image) {
+            for (int i = 0; i < (n + 1) / 2; i++) {
+                int temp = row[i] ^ 1; 
+                row[i] = row[n - i - 1] ^ 1;
+                row[n - i - 1] = temp;
+            }
+        }
+
+        return image;
+    }
+}
+
+
+Cells with Odd Values in a Matrix
+
+class Solution {
+    public int oddCells(int m, int n, int[][] indices) {
+        int[] rows = new int[m];
+        int[] cols = new int[n];
+        for (int[] index : indices) {
+            rows[index[0]]++;
+            cols[index[1]]++;
+        }
+        int oddCount = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if ((rows[i] + cols[j]) % 2 != 0) {
+                    oddCount++;
+                }
+            }
+        }
+        return oddCount;
+    }
+}
+
+Matrix Diagonal Sum
+
+class Solution {
+    public int diagonalSum(int[][] mat) {
+        int sum = 0, n = mat.length;
+        for (int i = 0; i < n; i++) {
+            sum += mat[i][i]; 
+            sum += mat[i][n - i - 1]; 
+        }
+        if (n % 2 != 0) {
+            sum -= mat[n / 2][n / 2];
+        }
+        return sum;
+    }
+}
+
+Transpose Matrix
+
+class Solution {
+    public int[][] transpose(int[][] matrix) {
+        int m = matrix.length, n = matrix[0].length;
+        int[][] result = new int[n][m];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                result[j][i] = matrix[i][j];
+            }
+        }
+        return result;
+    }
+}
+
+Spiral Matrix
+
+class Solution {
+    public List<Integer> spiralOrder(int[][] matrix) {
+        List<Integer> result = new ArrayList<>();
+        int top = 0, bottom = matrix.length - 1, left = 0, right = matrix[0].length - 1;
+        while (top <= bottom && left <= right) {
+            for (int i = left; i <= right; i++) 
+				result.add(matrix[top][i]);
+            top++;
+            for (int i = top; i <= bottom; i++) 
+				result.add(matrix[i][right]);
+            right--;
+            if (top <= bottom) {
+                for (int i = right; i >= left; i--) 
+					result.add(matrix[bottom][i]);
+                bottom--;
+            }
+            if (left <= right) {
+                for (int i = bottom; i >= top; i--) 
+					result.add(matrix[i][left]);
+                left++;
+            }
+        }
+        return result;
+    }
+}
+
+ Spiral Matrix II
+ 
+ class Solution {
+    public int[][] generateMatrix(int n) {
+        int[][] matrix = new int[n][n];
+        int top = 0, bottom = n - 1, left = 0, right = n - 1, num = 1;
+        while (top <= bottom && left <= right) {
+            for (int i = left; i <= right; i++) matrix[top][i] = num++;
+            top++;
+            for (int i = top; i <= bottom; i++) matrix[i][right] = num++;
+            right--;
+            if (top <= bottom) {
+                for (int i = right; i >= left; i--) matrix[bottom][i] = num++;
+                bottom--;
+            }
+            if (left <= right) {
+                for (int i = bottom; i >= top; i--) matrix[i][left] = num++;
+                left++;
+            }
+        }
+        return matrix;
+    }
+}
+
+Spiral Matrix III
+
+class Solution {
+    public int[][] spiralMatrixIII(int rows, int cols, int rStart, int cStart) {
+        int[][] result = new int[rows * cols][2];
+        int index = 0;
+        result[index++] = new int[]{rStart, cStart};
+        int steps = 1; 
+        int totalCells = rows * cols;
+        int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        while (index < totalCells) {
+            for (int[] dir : directions) {
+                for (int i = 0; i < steps; i++) {
+                    rStart += dir[0];
+                    cStart += dir[1];
+
+                    if (rStart >= 0 && rStart < rows && cStart >= 0 && cStart < cols) {
+                        result[index++] = new int[]{rStart, cStart};
+                    }
+                }
+                if (dir == directions[1] || dir == directions[3]) {
+                    steps++;
+                }
+            }
+        }
+        return result;
+    }
+}
+
+Determine Whether Matrix Can Be Obtained By Rotation
+
+class Solution {
+    public boolean findRotation(int[][] mat, int[][] target) {
+        for (int i = 0; i < 4; i++) {
+            if (isEqual(mat, target)) return true;
+            mat = rotate90(mat);
+        }
+        return false;
+    }
+    private boolean isEqual(int[][] mat, int[][] target) {
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                if (mat[i][j] != target[i][j]) return false;
+            }
+        }
+        return true;
+    }
+    private int[][] rotate90(int[][] mat) {
+        int n = mat.length;
+        int[][] rotated = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                rotated[j][n - i - 1] = mat[i][j];
+            }
+        }
+        return rotated;
+    }
+}
+
+Lucky Number in a Matrix
+
+class Solution {
+    public List<Integer> luckyNumbers (int[][] matrix) {
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < matrix.length; i++) {
+            int minIdx = 0;
+            for (int j = 1; j < matrix[i].length; j++) {
+                if (matrix[i][j] < matrix[i][minIdx]) minIdx = j;
+            }
+            boolean isLucky = true;
+            for (int[] row : matrix) {
+                if (row[minIdx] > matrix[i][minIdx]) {
+                    isLucky = false;
+                    break;
+                }
+            }
+            if (isLucky) result.add(matrix[i][minIdx]);
+        }
+        return result;
+    }
+}
+
+Reshape the Matrix
+
+class Solution {
+    public int[][] matrixReshape(int[][] mat, int r, int c) {
+        int m = mat.length;     
+        int n = mat[0].length;   
+
+        if (m * n != r * c) {
+            return mat;
+        }
+        int[][] reshapedMatrix = new int[r][c];
+        
+        int[] flattened = new int[m * n];
+        int index = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                flattened[index++] = mat[i][j];
+            }
+        }
+        index = 0;
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                reshapedMatrix[i][j] = flattened[index++];
+            }
+        }      
+        return reshapedMatrix;
+    }
+}
