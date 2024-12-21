@@ -24,6 +24,8 @@
 20. [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 21. [Rotate Array](https://leetcode.com/problems/rotate-array/)
 22. [Sort Colors](https://leetcode.com/problems/sort-colors/)
+23. [Count Pairs Whose Sum is Less than Target](https://leetcode.com/problems/count-pairs-whose-sum-is-less-than-target/description/)
+24. Kadane’s Algorithm
 
 
 ## 2D Array problems
