@@ -1,0 +1,333 @@
+							Searching Problems
+
+1.Linear Search
+
+class LinearSearch{
+Public static int Search(int[] arr, int x){
+ int n = arr.length;
+for(int i=0;i<n;i++){
+if(arr[i]== x)
+	return i;
+return -1;
+  }
+}
+
+2.Binary Search
+
+ public static int binarySearch(int arr[], int x) {
+        int l = 0;
+        int r = arr.length - 1;
+        while (l <= r) {
+            int m = l + (r-l)/2;
+
+            if (arr[m] == x) return m;
+
+            if (arr[m] > x) {
+                r = m - 1;
+            } else {
+                l = m + 1;
+            }
+        }
+        return -1;
+    }
+
+(or)
+
+public class BinarySearch {
+    public static int searchRecursively(int arr[], int x) {
+        return binarySearch(arr, 0, arr.length - 1, x);
+    }
+    public static int searchIteratively(int arr[], int x) {
+        return binarySearch(arr, x);
+    }
+    public static int binarySearch(int arr[], int l, int r, int x) {
+        if (r >= l) {
+            int mid = l + (r - l)/2;
+
+            if (arr[mid] == x) return mid;
+
+            if (arr[mid] > x) return binarySearch(arr, l, mid-1, x);
+
+            return binarySearch(arr, mid+1, r, x);
+        }
+
+        return -1;
+    }
+
+
+Binary Search Problems
+
+1.Kth Missing Positive Number
+
+class Solution {
+    public int findKthPositive(int[] arr, int k) {
+        int left = 0, right = arr.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] - mid - 1 < k) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return left + k;
+    }
+}
+
+2.Ceil The Floor
+
+class Solution {
+    public int[] getFloorAndCeil(int x, int[] arr) {
+        // code here
+         int floor = Integer.MIN_VALUE,ceil = Integer.MAX_VALUE;
+      for(int num : arr){
+          if(num<=x){
+              floor = Math.max(floor,num);
+          }
+          if(num>=x){
+             ceil = Math.min(ceil,num);
+          }
+      }
+      if(floor == Integer.MIN_VALUE)floor = -1;
+      if(ceil == Integer.MAX_VALUE) ceil= -1;
+      
+      return new int[] {floor,ceil};
+    
+    }
+}
+
+3.Peak Index in a Mountain Array
+
+class Solution {
+    public int peakIndexInMountainArray(int[] arr) {
+        int l = 0;
+        int r = arr.length - 1;
+        while (l <r) {
+            int m = l + (r-l)/2;
+            if (arr[m] > arr[m+1]) 
+                r= m;
+            else 
+                l = m + 1;
+        }
+        return r;
+    }
+ }
+ 
+ 4.Binary Search
+ 
+ class Solution {
+    public int search(int[] nums, int target) {
+        int low = 0, high = nums.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return -1;
+    }
+}
+
+
+5.Valid Perfect Square
+
+class Solution {
+    public boolean isPerfectSquare(int num) {
+        if(num<2) return true;
+        long l = 0;
+        long r = num/2;
+        while (l <= r) {
+            long m = l + (r-l)/2;
+            long sqr = m*m;
+            if (sqr == num) 
+            return true;
+            if (sqr<num) {
+                l = m + 1;
+            } else {
+                r = m - 1;
+            }
+        }
+        return false;
+    }
+}
+
+
+6.First Bad Version
+
+public class Solution extends VersionControl {
+    public int firstBadVersion(int n) {
+        int l = 0;
+        int r = n;
+        while (l < r) {
+            int m = l + (r-l)/2;
+            if (isBadVersion(m)) 
+                r = m;
+             else 
+                l = m + 1;   
+        }
+        return r;
+    }
+}
+
+7.Guess Number Higher or Lower
+
+public class Solution extends GuessGame {
+    public int guessNumber(int n) {
+        int l = 0;
+        int r = n;
+        while (l <= r) {
+            int m = l + (r-l)/2;
+            int g = guess(m);
+            if (g == 0) 
+                return m;
+
+            if (g == -1) {
+                r = m - 1;
+            } else {
+                l = m + 1;
+            }
+        }
+
+        return -1;
+    }
+    
+}
+
+8.Pow(x, n)
+
+class Solution {
+    public double myPow(double x, int n) {
+        long N = n;  
+        if (N < 0) {
+            x = 1 / x; 
+            N = -N;
+        }
+        return binarySearchPow(x, N);
+    }
+    private double binarySearchPow(double x, long n) {
+        double low = 1.0;
+        double high = x;
+        while (n > 0) {
+            if (n % 2 == 1) {
+                low *= high;
+            }
+            high *= high;
+            n /= 2;
+        }
+        return low;
+    }
+}
+
+9.Sqrt(x)
+
+class Solution{
+public int mySqrt(int x) {
+        if (x == 0) {
+            return 0; 
+        }
+        int first = 1, last = x,result=0 ;
+        while (first <= last) {
+            int mid = first + (last - first) / 2;
+            if (mid == x/mid) 
+                return mid;
+            else if (mid > x/mid) 
+                last = mid-1;
+             else {
+                result=mid;
+                first = mid+1;
+             }
+        }
+        return result;
+    }
+}
+
+
+10.Single Element in a Sorted Array
+
+class Solution {
+    public int singleNonDuplicate(int[] nums) {
+        int start = 0;
+        int end = nums.length - 1;
+        while(start < end){
+            int mid = start + (end-start) / 2;
+            if (mid % 2 == 1){
+                mid--;
+            }
+            if (nums[mid] != nums[mid + 1]){
+                end = mid;
+            }
+            else{
+                start = mid + 2;
+            }
+        }
+        return nums[end];
+    }
+}
+
+
+11.Find Peak Element
+
+class Solution {
+    public int findPeakElement(int[] arr) {
+        int start=0;
+        int end= arr.length-1;
+        while(start < end){
+            int mid= start + (end-start) / 2;
+            if(arr[mid] < arr[mid+1]){ 
+                start= mid+1;
+            }else{ 
+				end= mid; 
+            }
+        }
+        return start;
+    }
+}
+
+12.Search in Rotated Sorted Array
+
+class Solution {
+    public int search(int[] nums, int target) {
+        int low = 0, high = nums.length - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            }
+            if (nums[low] <= nums[mid]) {
+                if (nums[low] <= target && target < nums[mid]) {
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
+                }
+            } else {
+                if (nums[mid] < target && target <= nums[high]) {
+                    low = mid + 1;
+                } else {
+                    high = mid - 1;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+13.Kth Missing Positive Number
+
+class Solution {
+    public int findKthPositive(int[] arr, int k) {
+        int left = 0, right = arr.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] - mid - 1 < k) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return left + k;
+    }
+}

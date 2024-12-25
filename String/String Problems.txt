@@ -1,0 +1,429 @@
+										String problems
+
+1.Score of a String	
+	
+class Solution {
+    public int scoreOfString(String s) {
+        int total = 0;
+        for(int i = 0; i < s.length() - 1; i++) {
+            total += Math.abs(s.charAt(i) - s.charAt(i + 1));
+        }
+        return total;
+    }
+}
+
+2.Final Value of Variable After Performing Operations
+
+class Solution {
+    public int finalValueAfterOperations(String[] operations) {
+        int result=0;
+        for(int i=0;i<operations.length;i++){
+            if(operations[i].charAt(1)=='+')
+                result++;
+            else
+                result--;
+        }
+        return result;
+    }
+}
+
+3.Defanging an IP Address
+
+class Solution {
+    public String defangIPaddr(String address) {
+        StringBuilder str =new StringBuilder();
+        for(char c:address.toCharArray())
+            str.append((c=='.')?"[.]":c);
+        return str.toString();
+    }
+}
+
+4.Jewels and Stones
+
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        int count=0;
+        for(int i=0;i<jewels.length();i++){
+            for(int j=0;j<stones.length();j++){
+                if(jewels.charAt(i)==stones.charAt(j)){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}
+
+5.Maximum Number of Words Found in Sentences
+
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+        int maxLen = 0;
+		
+        for (String currSent : sentences) {
+            int currLen = currSent.split(" ").length;
+            if (maxLen < currLen)
+                maxLen = currLen;
+        }
+        return maxLen;
+    }
+}
+
+6.Check If Two String Arrays are Equivalent
+
+class Solution {
+    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+        StringBuilder sb=new StringBuilder();
+        StringBuilder sb1=new StringBuilder();
+        for(String s:word1)
+        {
+            sb.append(s);
+        }
+        for(String s:word2)
+        {
+            sb1.append(s);
+        }
+        return (sb.toString().equals(sb1.toString()))?true:false;
+    }
+}
+
+7.Count Items Matching a Rule
+
+class Solution {
+    public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+        int i = 0;
+        int count = 0;
+        if (ruleKey.equals("type")) {
+            i = 1;
+            for (int j = 0; j < items.size(); j++) {
+                if (items.get(j).get(i-1).equals(ruleValue))
+                    count++;
+            }
+        }
+        if (ruleKey.equals("color")) {
+            i = 2;
+            for (int j = 0; j < items.size(); j++) {
+                if (items.get(j).get(i-1).equals(ruleValue))
+                    count++;
+            }
+        }
+        if (ruleKey.equals("name")) {
+            i = 3;
+            for (int j = 0; j < items.size(); j++) {
+                if (items.get(j).get(i-1).equals(ruleValue))
+                    count++;
+            }
+        }
+    return count;
+    }
+}
+
+8.To Lower Case
+
+class Solution {
+    public String toLowerCase(String s) {
+         StringBuilder result = new StringBuilder();
+            for(char c : s.toCharArray()){
+                if (c >= 'A' && c <= 'Z' ){
+                    c = (char) ((int) c + 32 );
+                }
+            result.append(c);
+            }
+        return result.toString();
+    }
+}
+
+9.Check if the Sentence Is Pangram
+
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        if(sentence.length()<26) return false;
+        for(char ch='a';ch<='z';ch++){
+            if(sentence.indexOf(ch)<0){
+                return false;
+            }
+         }
+        return true;
+    }
+}
+
+10.Reverse String
+
+class Solution {
+    public void reverseString(char[] s) {
+        int n =s.length;
+        int j = n -1;
+        int i = 0;
+        while(i<j){
+            char temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+            i++;
+            j--;
+        }
+    }
+}
+
+11.Single Element in a Sorted Array
+
+class Solution {
+    public int singleNonDuplicate(int[] nums) {
+        int l = 0;
+        int r = nums.length - 1;
+        while (l < r) {
+            int m = l + (r-l)/2;
+            if (m%2 == 1)  m--;
+            if (nums[m]!= nums[m+1]) {
+                r =m;
+            } else {
+                l = m + 2;
+            }
+        }
+        return nums[l];
+    }
+}
+
+12.Find Words Containing Character
+
+class Solution {
+    public List<Integer> findWordsContaining(String[] words, char x) {
+        int n=words.length;
+        List<Integer> ans = new ArrayList<>();
+        for(int i=0;i<n;i++){
+            if(words[i].indexOf(x)!=-1)
+                ans.add(i);
+        }
+        return ans;
+    }
+}
+
+13.Goal Parser Interpretation
+
+class Solution {
+    public String interpret(String command) {
+	    StringBuilder S = new StringBuilder(command.length());
+        for(int i=0;i<command.length();i++)
+        {
+            if(command.charAt(i)=='G')
+                S.append('G');
+            if(command.charAt(i)==('('))
+            {
+                if(command.charAt(i+1)==')')
+                {    
+                    S.append('o');
+                    i++;
+                }
+                else
+                {
+                    S.append("al");
+                    i=i+3;
+                }
+            }
+        }
+        return S.toString();
+    }
+}
+
+14.Shuffle String
+
+class Solution {
+    public String restoreString(String s, int[] indices) {
+        StringBuilder str = new StringBuilder(s);
+        for(int i=0;i<indices.length;i++){
+            str.setCharAt(indices[i],s.charAt(i));
+        }
+        return str.toString();
+    }
+}
+
+15.Remove Outermost Parentheses
+
+class Solution {
+    public String removeOuterParentheses(String s) {
+        int count=0;
+        StringBuilder str = new StringBuilder();
+        for(char c : s.toCharArray()){
+            if(c == '('){
+                if(count != 0)
+                    str.append(c);
+                count++;
+            }
+            else{
+                if(count != 1){
+                    str.append(c);
+                }
+                count--;
+            }
+        }
+        return str.toString();
+    }
+}
+
+16.Find First Palindromic String in the Array
+
+class Solution {
+    public String firstPalindrome(String[] words) {
+        for(String s : words){
+            StringBuilder palindrome = new StringBuilder(s).reverse();
+            if(s.equals(palindrome.toString())){
+                return s;
+            }
+        }
+        return "";
+    }
+}
+
+17.Hash Divided String
+
+class Solution {
+    public String stringHash(String s, int k) {
+        int n=s.length();
+        StringBuilder str = new StringBuilder();
+        for(int i=0,sum=0;i<n;i++){
+            sum += s.charAt(i) - 'a';
+            if((i+1)%k==0)
+            {
+                str.append((char)('a'+(sum%26)));
+                sum=0;
+            }
+        }
+        return str.toString();
+    }
+}
+
+18.Sorting the Sentence
+
+class Solution {
+    public String sortSentence(String s) {
+        String[] w = s.split(" ");
+        String[] arr = new String[w.length];
+        for(String word :w){
+            int index = word.charAt(word.length()-1)-'0';
+            String str = word.substring(0,word.length()-1);
+            arr[index-1]=str;      
+        }
+        return String.join(" ",arr);
+    }
+}
+
+19.Reverse Words in a String III
+
+class Solution {
+    public String reverseWords(String s) {
+        String[] words =s.split(" ");
+        StringBuilder result = new StringBuilder();
+        for(int i=0;i<words.length;i++){
+            String reversedWord = new StringBuilder(words[i]).reverse().toString();
+            result.append(reversedWord);
+            if(i<words.length-1)
+                result.append(" ");
+        }
+        return result.toString();
+    }
+}
+
+20.Check if a String Is an Acronym of Words
+
+class Solution {
+    public boolean isAcronym(List<String> words, String s) {
+        StringBuilder str = new StringBuilder();
+        for(int i=0;i<words.size();i++){
+            str.append(words.get(i).charAt(0));
+        }
+        return str.toString().equals(s);
+    }
+}
+
+21.Number of Strings That Appear as Substrings in Word
+
+class Solution {
+    public int numOfStrings(String[] patterns, String word) {
+        int c=0;
+        for(String p: patterns){
+            if(word.contains(p))
+                c++;
+        }
+        return c;
+    }
+}
+
+22.Decrypt String from Alphabet to Integer Mapping
+
+class Solution {
+    public String freqAlphabets(String s) {
+        for(int i = 10; i <= 26; i++) {
+            s = s.replaceAll(i + "#", (char)('a' + (i-1)) + "");
+        }
+        for(int i = 1; i <= 9; i++) {
+            s = s.replaceAll(i + "", (char)('a' + (i-1)) + "");
+        }
+        return s;
+    }
+}
+
+23. Find the Sequence of Strings Appeared on the Screen
+
+class Solution {
+    public List<String> stringSequence(String target) {
+        List<String> res = new ArrayList<>();
+        int t = target.length();
+        StringBuilder tar = new StringBuilder();
+        for(int i=0; i<t; i++){
+            tar.append("a");
+            res.add(tar.toString());
+            while(tar.charAt(i)!=target.charAt(i)){
+                tar.setCharAt(i,(char)(tar.charAt(i)+1));
+                res.add(tar.toString());
+            }
+        }
+        return res;
+    }
+}
+
+24.Convert Date to Binary
+
+class Solution {
+    public String convertDateToBinary(String date) {
+        String y = date.substring(0,4);
+        String m = date.substring(5,7);
+        String d = date.substring(8,10);
+        StringBuilder sb = new StringBuilder();
+        sb.append(Integer.toBinaryString(Integer.parseInt(y)));
+        sb.append("-");
+        sb.append(Integer.toBinaryString(Integer.parseInt(m)));
+        sb.append("-");
+        sb.append(Integer.toBinaryString(Integer.parseInt(d)));
+        return sb.toString();
+    }
+}
+
+25.Determine if String Halves Are Alike
+
+class Solution { public boolean halvesAreAlike(String s) { 
+    int n = s.length(); 
+    String a = s.substring(0, n / 2); 
+    String b = s.substring(n / 2); 
+    return countVowels(a) == countVowels(b); 
+    } 
+    private int countVowels(String str) { 
+        Set<Character> vowels = new HashSet<>(); 
+        vowels.add('a');
+        vowels.add('e');
+        vowels.add('i'); 
+        vowels.add('o'); 
+        vowels.add('u'); 
+        vowels.add('A'); 
+        vowels.add('E'); 
+        vowels.add('I'); 
+        vowels.add('O'); 
+        vowels.add('U'); 
+        int count = 0; 
+        for (char c : str.toCharArray()) { 
+            if (vowels.contains(c)) 
+            { 
+                count++; 
+            } 
+        } 
+        return count;
+    }
+}
