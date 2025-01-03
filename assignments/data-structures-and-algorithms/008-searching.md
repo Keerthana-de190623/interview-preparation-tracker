@@ -2,9 +2,18 @@
 
 ## Linear Search
 
- 01. Linear Search
+01. Linear Search
 
----
+## Linear Searching Problems
+
+01. [ ] Find maximum element in a array
+
+02. [ ] Find minimum element in a array
+
+03. [ ] Find the number of elements that contains even digit in an array. nums = [123, 43, 453, 4332, 123456, 1234]. Output = 4
+
+04. [ ] Search a element in 2D array
+
 
 ## Binary Search
 
@@ -25,7 +34,7 @@
 13. [ ] [Find Peak Element](https://leetcode.com/problems/find-peak-element/)
 14. [ ] [Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/)
 15. [ ] [Square Root](https://leetcode.com/problems/sqrtx/description/)
-16. [ ] [Pow(x, n)](https://leetcode.com/problems/powx-n/)
+16. [ ] [Pow(x, n)](https://leetcode.com/problems/powx-n/) (Solve it after recursion)
 17. [ ] [Find nth root of m](https://www.geeksforgeeks.org/problems/find-nth-root-of-m5843/0)
 18. [ ] [K-th element of two Arrays](https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/0)
 19. [ ] [Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square)

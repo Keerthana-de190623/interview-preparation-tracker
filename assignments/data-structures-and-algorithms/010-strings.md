@@ -37,6 +37,15 @@
 05. [ ] [Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
 06. [ ] [Permutation in String](https://leetcode.com/problems/permutation-in-string/)
 07. [ ] [Substrings of Size Three with Distinct Characters](https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/)
+07. [ ] [Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)
+08. [ ] [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)
+09. [ ] [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+10. [ ] [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
+11. [ ] [Is Subsequence](https://leetcode.com/problems/is-subsequence/)
+12. [ ] [Two Sum](https://leetcode.com/problems/two-sum/)
+13. [ ] [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+14. [ ] [3Sum](https://leetcode.com/problems/3sum/description/)
+15. [ ] [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 
 
 ### Do It After Recursion
