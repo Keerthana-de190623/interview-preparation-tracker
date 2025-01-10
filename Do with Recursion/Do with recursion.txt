@@ -1,0 +1,172 @@
+Do with recursion
+
+1.Maximum Sum of Distinct Subarrays With Length K
+
+class Solution {
+    public long maximumSubarraySum(int[] nums, int k) {
+        long res = 0;
+        Map<Integer, Integer> count = new HashMap<>();
+        long curSum = 0;
+        
+        int l = 0;
+        for (int r = 0; r < nums.length; r++) {
+            curSum += nums[r];
+            count.put(nums[r], count.getOrDefault(nums[r], 0) + 1);
+            
+            if (r - l + 1 > k) {
+                count.put(nums[l], count.get(nums[l]) - 1);
+                if (count.get(nums[l]) == 0) {
+                    count.remove(nums[l]);
+                }
+                curSum -= nums[l];
+                l++;
+            }
+            
+            if (count.size() == r - l + 1 && r - l + 1 == k) {
+                res = Math.max(res, curSum);
+            }
+        }
+        
+        return res;
+    }
+}
+
+2.Sliding Subarray Beauty
+
+class Solution {
+    public int[] getSubarrayBeauty(int[] nums, int k, int x) {
+        int[] counter = new int[101];
+        int[] arr = new int[nums.length - k + 1];
+        int index = 0;
+
+        for(int i = 0; i < k; i++) {
+            counter[nums[i] + 50]++;
+        }
+
+        int count = 0;
+        for(int i = 0; i < counter.length; i++) {
+            count += counter[i];
+
+            if(count >= x) {
+                if(i - 50 < 0) {
+                    arr[index++] = i - 50;
+                } else {
+                    index++;
+                }   
+                break;
+            }
+        }
+
+        if(count < x) {
+            index++;
+        }
+        
+        for(int i = k; i < nums.length; i++) {
+            counter[nums[i] + 50]++;
+            counter[nums[i-k] + 50]--;
+
+            int c = 0;
+            for(int j = 0; j < counter.length; j++) {
+                c += counter[j];
+
+                if(c >= x) {
+                    if(j - 50 < 0) {
+                        arr[index++] = j - 50;
+                    } else {
+                        index++;
+                    }      
+                    break;
+                }
+            }
+
+            if(c < x) {
+                index++;
+            }
+        }
+
+        return arr;
+    }
+}
+
+
+3.Maximum Points You Can Obtain from Cards
+
+public class Solution {
+    public int maxScore(int[] cardPoints, int k) {
+        int res = 0;
+
+        for (int i = 0; i < k; i++) {
+            res += cardPoints[i];
+        }
+        
+        int curr = res;
+    
+        for (int i = k - 1; i >= 0; i--) {
+
+            curr -= cardPoints[i];
+
+            curr += cardPoints[cardPoints.length - k + i];
+
+            res = Math.max(res, curr);
+        }
+        
+        return res;
+    }
+}
+
+4.Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold
+
+public class Solution {
+    public int numOfSubarrays(int[] arr, int k, int threshold) {
+        int n = arr.length;
+        int count = 0, prefixSum = 0;
+        int l = 0, r = 0;
+        
+        while (r < n) {
+
+            prefixSum += arr[r];
+
+            if (r - l + 1 == k) {
+
+                if (prefixSum / k >= threshold) {
+                    count++;
+                }
+
+                prefixSum -= arr[l];
+                l++;
+            }
+            r++;
+        }
+        
+        return count;
+    }
+}
+
+
+5.Sliding Window Maximum
+
+class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        int n = nums.length;
+        int[] result = new int[n - k + 1];
+        Deque<Integer> window = new ArrayDeque<>();
+
+        for (int i = 0; i < n; i++) {
+            while (!window.isEmpty() && window.peekFirst() < i - k + 1) {
+                window.pollFirst();
+            }
+
+            while (!window.isEmpty() && nums[window.peekLast()] < nums[i]) {
+                window.pollLast();
+            }
+
+            window.offerLast(i);
+
+            if (i >= k - 1) {
+                result[i - k + 1] = nums[window.peekFirst()];
+            }
+        }
+
+        return result;
+    }
+}
